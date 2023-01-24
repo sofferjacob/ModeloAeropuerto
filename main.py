@@ -13,7 +13,7 @@ new_model = AirportModel(get_param("N"), get_param("M"), get_param("NUM_OF_PLANE
 
 async def handle_connection(websocket):
     CONNECTIONS.add(websocket)
-    await websocket.send(json.dumps(new_model.getStatus()))
+    await websocket.send(json.dumps({"initialState": new_model.getStatus()}))
     try:
         await websocket.wait_closed()
     finally:
