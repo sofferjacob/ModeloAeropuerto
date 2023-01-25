@@ -45,7 +45,7 @@ class AirportModel(Model):
             for agent in content:
                 if isinstance(agent, PlaneAgent):
                     data = {
-                        "id": str(agent.unique_id),
+                        "planeId": str(agent.unique_id),
                         "state": str(agent.state),
                     }
                     res.append(data)
