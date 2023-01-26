@@ -34,4 +34,5 @@ async def main():
 
 
 if __name__ == "__main__":
+    print(f"Model is running on port {get_param('MODEL_PORT')}")
     asyncio.run(main())
