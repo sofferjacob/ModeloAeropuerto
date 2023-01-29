@@ -49,7 +49,7 @@ class PlaneAgent(Agent):
         if self.state != self.nextState:
             message = {
                 "planeId": str(self.unique_id),
-                "state": str(self.nextState),
+                "state": str(self.nextState.value),
             }
             websockets.broadcast(CONNECTIONS, json.dumps(message))
         self.state = self.nextState
